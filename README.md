@@ -49,46 +49,7 @@ Hourly solar production measurements with weather conditions:
 
 The model explains 53% of variance in solar production, which is solid performance for renewable energy forecasting given weather variability and atmospheric effects not captured in basic meteorological data.
 
-## Installation
-```bash
-git clone https://github.com/yourusername/solar-production-prediction.git
-cd solar-production-prediction
-pip install -r requirements.txt
-```
 
-**Requirements:**
-```
-pandas>=1.5.0
-numpy>=1.23.0
-matplotlib>=3.6.0
-seaborn>=0.12.0
-scikit-learn>=1.2.0
-xgboost>=1.7.0
-lightgbm>=3.3.0
-```
-
-## Usage
-
-Train the model:
-```bash
-python solar_prediction.py
-```
-
-Make predictions:
-```python
-import pickle
-import pandas as pd
-
-# Load model and scaler
-with open('best_model.pkl', 'rb') as f:
-    model = pickle.load(f)
-with open('scaler.pkl', 'rb') as f:
-    scaler = pickle.load(f)
-
-# Prepare data with same features as training
-X_new_scaled = scaler.transform(X_new)
-predictions = model.predict(X_new_scaled)
-```
 
 ## Project Structure
 ```
